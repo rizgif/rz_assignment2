@@ -46,7 +46,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    <a href="{{ route('uploads') }}" class="text-green-500 hover:text-green-700 font-bold mx-2">Uploads</a>
+                    <a href="{{ route('upload-form') }}" class="text-green-500 hover:text-green-700 font-bold mx-2">Uploads</a>
                     
 
                 </div>
