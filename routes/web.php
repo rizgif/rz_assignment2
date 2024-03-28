@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UploadController;
+use App\Http\Controllers\TransactionController;
 
 Route::get('/', function () {
     return view('auth/login'); // Assuming 'welcome' is your login page
@@ -40,5 +41,11 @@ Route::get('/upload-form', function () {
 Route::get('/upload', [UploadController::class, 'showUploadForm'])->name('upload.form');
 Route::post('/upload', [UploadController::class, 'upload'])->name('upload');
 
+Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions.index');
+Route::get('/transactions/create', [TransactionController::class, 'create'])->name('transactions.create');
+Route::post('/transactions', [TransactionController::class, 'store'])->name('transactions.store');
+Route::get('/transactions/{transaction}/edit', [TransactionController::class, 'edit'])->name('transactions.edit');
+Route::put('/transactions/{transaction}', [TransactionController::class, 'update'])->name('transactions.update');
+Route::delete('/transactions/{transaction}', [TransactionController::class, 'destroy'])->name('transactions.destroy');
 
 require __DIR__.'/auth.php';
