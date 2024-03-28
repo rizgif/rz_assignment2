@@ -24,16 +24,18 @@
                             <label for="amount" class="block text-sm font-medium text-gray-700">Amount</label>
                             <input type="number" name="amount" id="amount" class="mt-1 p-2 border rounded-md w-full">
                         </div>
+                        
+                        <!-- Add the submit button -->
                         <div class="mb-4">
-                            <label for="balance" class="block text-sm font-medium text-gray-700">Balance</label>
-                            <input type="number" name="balance" id="balance" class="mt-1 p-2 border rounded-md w-full">
-                        </div>
-                        <div>
-                            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Create</button>
+                            <x-primary-button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</x-primary-button>
                         </div>
                     </form>
+                    
                 </div>
             </div>
         </div>
+    </div>
+    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mb-4">
+        <a href="{{ url()->previous() }}" class="btn btn-primary">&lt; Back</a>
     </div>
 </x-app-layout>
