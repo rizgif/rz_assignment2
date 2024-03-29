@@ -15,7 +15,7 @@
 
                     <form action="{{ route('upload') }}" method="POST" enctype="multipart/form-data">
                         @csrf
-                        <input type="file" name="csv_file">
+                        <input type="file" name="csv_files[]" multiple>
                         <button type="submit">Upload</button>
                     </form>
 
