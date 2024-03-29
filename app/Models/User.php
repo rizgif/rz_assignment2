@@ -46,8 +46,14 @@ class User extends Authenticatable
         ];
     }
 
-    public function isAdmin()
+    /**
+     * Check if the user has a specific role.
+     *
+     * @param string $role
+     * @return bool
+     */
+    public function hasRole(string $role): bool
     {
-        return $this->role === 'admin'; // Assuming 'admin' is the role for administrators
+        return $this->role === $role;
     }
 }

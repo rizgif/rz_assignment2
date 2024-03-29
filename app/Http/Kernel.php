@@ -64,6 +64,8 @@ class Kernel implements KernelContract
     protected $routeMiddleware = [
 
         'approved' => \App\Http\Middleware\ApprovedMiddleware::class,
+        'admin' => \App\Http\Middleware\AdminMiddleware::class,
+
 
     ];
 
