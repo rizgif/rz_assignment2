@@ -23,6 +23,7 @@ class AdminUserSeeder extends Seeder
             'is_approved' => true, // Assuming you want the admin to be approved automatically
             'created_at' => now(),
             'updated_at' => now(),
+            'role' => 'admin'
         ]);
     }
 }

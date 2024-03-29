@@ -11,11 +11,13 @@
                 <div class="p-6">
                     <!-- Display CRUD buttons -->
                     <div class="mb-4">
+                        <x-primary-button>
                         <a href="{{ route('transactions.create') }}" class="btn btn-primary">Add Transaction</a>
+                        </x-primary-button>
                     </div>
                     <!-- Display transactions data -->
                     <table class="min-w-full divide-y divide-gray-200">
-                        <thead>
+                        <thead class="bg-gray-50">
                             <tr>
                                 <th>Date</th>
                                 <th>Name</th>
@@ -25,7 +27,7 @@
                                 <th>Actions</th> <!-- Add Actions column -->
                             </tr>
                         </thead>
-                        <tbody>
+                            <tbody class="bg-white divide-y divide-gray-200">
                             @foreach ($transactions as $transaction)
                                 <tr>
                                     <td>{{ $transaction->date }}</td>
@@ -35,8 +37,10 @@
                                     <!-- Add other columns if needed -->
                                     <td>
                                         <!-- Edit Button -->
-                                        <a href="{{ route('transactions.edit', $transaction->id) }}"
-                                            class="btn btn-primary">Edit</a>
+                                        <x-secondary-button>
+                                            <a href="{{ route('transactions.edit', $transaction->id) }}"
+                                                class="btn btn-primary">Edit</a>
+                                        </x-secondary-button>
                                         <!-- Delete Button -->
                                         <form action="{{ route('transactions.destroy', $transaction->id) }}"
                                             method="POST" style="display: inline-block;">

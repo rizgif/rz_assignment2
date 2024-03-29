@@ -52,7 +52,7 @@ class RegisteredUserController extends Controller
     // Auth::login($user);
 
     // Redirect to a page indicating that the user is awaiting approval
-    return redirect('/awaiting-approval'); // Make sure this route is defined in your web.php file
+    return redirect('/'); // Make sure this route is defined in your web.php file
 }
 
 }

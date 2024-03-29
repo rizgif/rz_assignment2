@@ -4,6 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\AdminController;
+
 
 Route::get('/', function () {
     return view('auth/login'); // Assuming 'welcome' is your login page
@@ -47,5 +49,24 @@ Route::post('/transactions', [TransactionController::class, 'store'])->name('tra
 Route::get('/transactions/{transaction}/edit', [TransactionController::class, 'edit'])->name('transactions.edit');
 Route::put('/transactions/{transaction}', [TransactionController::class, 'update'])->name('transactions.update');
 Route::delete('/transactions/{transaction}', [TransactionController::class, 'destroy'])->name('transactions.destroy');
+
+Route::get('/admin/users', [AdminController::class, 'index'])->name('admin.users');
+Route::post('/admin/users/{user}/approve', [AdminController::class, 'approve'])->name('admin.users.approve');
+Route::post('/admin/users/{user}/reject', [AdminController::class, 'reject'])->name('admin.users.reject');
+
+
+
+
+
+
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+    
+});
+
+
+
+
+
 
 require __DIR__.'/auth.php';
