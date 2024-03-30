@@ -31,6 +31,21 @@
             <main>
                 {{ $slot }}
             </main>
+            <footer class="bg-gray-800 text-white py-4 absolute bottom-0 w-full">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <span class="text-sm">&copy; {{ date('Y') }} {{ config('app.name') }}</span>
+                        </div>
+                        <div>
+                            <span class="text-sm">Team Members: Davin Leong, Riz Nur Saidy</span>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+           
         </div>
+
+      
     </body>
 </html>
