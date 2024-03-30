@@ -40,10 +40,11 @@
                         </div>
 
                         <!-- Back Button -->
-                        <a href="{{ url()->previous() }}"
-                            class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded mb-4">
-                            Back
-                        </a>
+                        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mb-4">
+                            <x-primary-button type="submit">
+                            <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>
+                            </x-primary-button>
+                        </div>
 
                     </form>
                     <!-- End of Update Bucket Form -->

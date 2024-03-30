@@ -11,11 +11,21 @@
                 </div>
 
                 <!-- Navigation Links -->
+
+                
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Home') }}
                     </x-nav-link>
                 </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('upload-form')" :active="request()->routeIs('upload-form')">
+                        {{ __('Upload') }}
+                    </x-nav-link>
+                </div>
+
+
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('transactions.index')" :active="request()->routeIs('transactions.index')">
                         {{ __('Transactions') }}
@@ -29,10 +39,12 @@
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('upload-form')" :active="request()->routeIs('upload-form')">
-                        {{ __('Upload') }}
+                    <x-nav-link :href="route('reports')" :active="request()->routeIs('reports')">
+                        {{ __('Reports') }}
                     </x-nav-link>
                 </div>
+
+    
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     @if(Auth::user()->hasRole('admin'))

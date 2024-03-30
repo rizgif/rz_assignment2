@@ -27,6 +27,8 @@
 
 
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 mb-4">
-        <a href="{{ url()->previous() }}" class="btn btn-primary">&lt; Back</a>
+        <x-primary-button type="submit">
+        <a href="{{ url()->previous() }}" class="btn btn-primary">Back</a>
+        </x-primary-button>
     </div>
 </x-app-layout>
