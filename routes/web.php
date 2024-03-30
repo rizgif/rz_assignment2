@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\BucketsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UploadController;
 
@@ -25,9 +26,17 @@ Route::get('/transactions', function () {
     return view('transactions'); 
 })->name('transactions');
 
-Route::get('/buckets-data', function () {
-    return view('buckets-data'); 
-})->name('buckets-data');
+Route::get('/buckets-data', [BucketsController::class, 'index'])->name('buckets-data');
+
+Route::get('/buckets/create', [BucketsController::class, 'create'])->name('buckets.create');
+Route::get('/buckets/{id}/edit', [BucketsController::class, 'edit'])->name('buckets.edit');
+Route::put('/buckets/{id}', [BucketsController::class, 'update'])->name('buckets.update');
+Route::delete('/buckets/{bucket}', [BucketsController::class, 'destroy'])->name('buckets.destroy');
+
+
+// Route::get('/buckets-data', function () {
+//     return view('buckets-data'); 
+// })->name('buckets-data');
 
 Route::get('/reports', function () {
     return view('reports'); 
