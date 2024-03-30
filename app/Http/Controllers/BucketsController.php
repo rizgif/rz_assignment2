@@ -81,7 +81,7 @@ class BucketsController extends Controller
     // return view('buckets-data', compact('buckets'));
     // If bucket is empty, insert sample bucket data
     if (Bucket::count() === 0) {
-      $this->parseAndInsertCSV(storage_path('app/csv/2023 02.csv'));
+      // $this->parseAndInsertCSV(storage_path('app/csv/2023 02.csv'));
     }
     $buckets = Bucket::all();
     return view('buckets-data', compact('buckets'));

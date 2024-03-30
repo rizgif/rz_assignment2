@@ -6,6 +6,8 @@ use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\TransactionsImport;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
+use App\Imports\BucketsImport; // Import BucketsImport
+
 
 class UploadController extends Controller
 {
@@ -34,6 +36,7 @@ class UploadController extends Controller
                 // Process the uploaded CSV file using Laravel Excel
                 try {
                     Excel::import(new TransactionsImport(), $file);
+                    Excel::import(new BucketsImport(), $file); // Import BucketsImport
                     $successFiles[] = $file->getClientOriginalName();
                 } catch (\Exception $e) {
                     $errorFiles[] = $file->getClientOriginalName();
